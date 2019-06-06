@@ -8,12 +8,11 @@ import java.io.FileReader;
 
 public class GSONQuoteGrabber {
 
-    public static String quoteGetter() {
+    public static String quoteGetter(String filePath) {
         Quote randomQuote;
         try {
             Gson gson = new Gson();
-            String filepath = "/Users/ttb/codefellows/401/Quotes/assets/recentquotes.json";
-            File file = new File(filepath);
+            File file = new File(filePath);
             FileReader reader = new FileReader(file);
 
             Quote[] quotes = gson. fromJson(reader, Quote[].class);
@@ -26,12 +25,7 @@ public class GSONQuoteGrabber {
         catch (FileNotFoundException e){
             e.printStackTrace();
         }
-        return "Grabbed";
-    }
-
-    public static void main(String[] args) {
-        String hello = quoteGetter();
-        System.out.println(hello);
+        return "File Not Found";
     }
 
 }

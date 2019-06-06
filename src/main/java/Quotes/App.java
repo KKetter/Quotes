@@ -17,10 +17,12 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Do you want to a random quote? (1 Yes, 2 No)");
         int decision = scanner.nextInt();
+        System.out.println("What is your local file path to assets?");
+        String filePath = scanner.next();
         if (decision == 1) {
-            System.out.println(GSONQuoteGrabber.quoteGetter());
+            System.out.println(GSONQuoteGrabber.quoteGetter(filePath));
         } else {
-            System.out.println("Oh ok that was allowed I guess.1");
+            System.out.println("Oh ok that was allowed I guess.");
         }
     }
 }
