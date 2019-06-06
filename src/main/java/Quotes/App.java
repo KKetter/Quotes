@@ -3,12 +3,24 @@
  */
 package Quotes;
 
+import java.util.Scanner;
+
 public class App {
     public String getGreeting() {
-        return "Hello world.";
+        return "Hello world. Welcome to the Quote Grabber";
     }
 
     public static void main(String[] args) {
+
         System.out.println(new App().getGreeting());
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Do you want to a random quote? (1 Yes, 2 No)");
+        int decision = scanner.nextInt();
+        if (decision == 1) {
+            System.out.println(GSONQuoteGrabber.quoteGetter());
+        } else {
+            System.out.println("Oh ok that was allowed I guess.1");
+        }
     }
 }
